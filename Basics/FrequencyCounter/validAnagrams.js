@@ -7,7 +7,12 @@ function validAnagrams(first, second) {
 
   for (let i = 0; i < first.length; i++) {
     let letter = first[i];
-    lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1);
+    // lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1);
+    if(lookup[letter]){
+      lookup[letter] +=1;
+    }else{
+      lookup[letter] =1;
+    }
   }
 
   for (let i = 0; i < second.length; i++) {
@@ -22,3 +27,4 @@ function validAnagrams(first, second) {
 }
 
 console.log(validAnagrams("cinema", "iceman"));
+
